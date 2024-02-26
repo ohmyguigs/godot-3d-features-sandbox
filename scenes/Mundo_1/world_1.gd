@@ -11,6 +11,6 @@ func _process(_delta):
 	pass
 
 func _input(_ev):
-	if Input.is_key_pressed(KEY_ESCAPE):
-		get_tree().change_scene_to_file("res://scenes/menu_principal.tscn")
+	if Input.is_action_just_pressed("escape"):
+		get_tree().change_scene_to_file("res://scenes/MenuPrincipal/menu_principal.tscn")
 	pass
