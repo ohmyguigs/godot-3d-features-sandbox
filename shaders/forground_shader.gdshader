@@ -4,7 +4,7 @@ uniform float MULTIPLIER = 0.56; // adjusts the height of the vignette effect
 uniform float SCALE = 0.5; // adjusts the size of the vignette
 uniform float SOFTNESS = 0.45; // adjusts the smoothness of the edges
 
-uniform float BASE_OPACITY = 0.6; // sets the opacity of the vignette effect
+uniform float BASE_OPACITY = 1.0; // sets the opacity of the vignette effect
 
 void fragment(){ // beginning of the fragment shader function
 	

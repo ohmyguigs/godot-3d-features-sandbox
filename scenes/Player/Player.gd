@@ -12,8 +12,9 @@ const ROLL_SPEED = 6.3
 const RUN_SPEED = 6.0
 
 var running_pressed: bool = false
-var is_rolling: bool = false # here goes the iframes
+var is_rolling: bool = false
 var rolling_timer = 0
+var roll_direction_cache
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -36,12 +37,16 @@ func get_derived_velocity():
 		return SLOW_WALK_SPEED
 
 func _physics_process(delta):
-	# Add the gravity.
+	# Add the gravity / handle falling.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
+	if is_rolling:
+			rolling_timer += delta
+	if rolling_timer >= animationPlayer.get_animation("roll").length:
+			rolling_timer = 0
+			is_rolling = false
+
 	var input_dir = Input.get_vector("walk_left", "walk_right", "walk_front", "walk_back")
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	
@@ -51,20 +56,20 @@ func _physics_process(delta):
 		elif Input.is_action_just_released("sprint"):
 			running_pressed = false
 
-		if is_rolling:
-			rolling_timer += delta
+		
 		if Input.is_action_just_pressed("roll"):
 			rolling_timer += delta
 			is_rolling = true
-		
-		if rolling_timer >= animationPlayer.get_animation("roll").length:
-			rolling_timer = 0
-			is_rolling = false
+			roll_direction_cache = direction
 
 		var speed = get_derived_velocity()
-		velocity.x = direction.x * speed
-		velocity.z = direction.z * speed
-		visuals.look_at(direction + position)
+		if is_rolling:
+			velocity.x = roll_direction_cache.x * speed
+			velocity.z = roll_direction_cache.z * speed
+		else:
+			velocity.x = direction.x * speed
+			velocity.z = direction.z * speed
+			visuals.look_at(direction + position)
 
 		if speed == SLOW_WALK_SPEED:
 			animationPlayer.play("walk_slow", 0.2)
@@ -73,11 +78,15 @@ func _physics_process(delta):
 		elif speed == RUN_SPEED:
 			animationPlayer.play("run", 0.2)
 		elif speed == ROLL_SPEED:
-			animationPlayer.play("roll", 0.2)
+			animationPlayer.play("roll", 3)
 	else:
 		var speed = get_derived_velocity()
-		velocity.x = move_toward(velocity.x, 0, speed)
-		velocity.z = move_toward(velocity.z, 0, speed)
-		animationPlayer.play("idle")
+		if is_rolling:
+			velocity.x = roll_direction_cache.x * speed
+			velocity.z = roll_direction_cache.z * speed
+		else:
+			velocity.x = move_toward(velocity.x, 0, speed)
+			velocity.z = move_toward(velocity.z, 0, speed)
+			animationPlayer.play("idle")
 
 	move_and_slide()

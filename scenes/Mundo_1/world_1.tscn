@@ -1,13 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://dpaxieur8k1mo"]
+[gd_scene load_steps=12 format=3 uid="uid://dpaxieur8k1mo"]
 
 [ext_resource type="Script" path="res://scenes/Mundo_1/world_1.gd" id="1_1yn6n"]
 [ext_resource type="Material" uid="uid://djwgxm0207ddi" path="res://assets/materials/floor_prototype_material.tres" id="1_mowew"]
 [ext_resource type="Material" uid="uid://d060p4onr0x4a" path="res://assets/materials/wall_prototype_material.tres" id="2_scxr5"]
 [ext_resource type="PackedScene" uid="uid://c5ckxso6io5c" path="res://scenes/Player/Player.tscn" id="3_p4xve"]
 [ext_resource type="PackedScene" uid="uid://bvgdfnfqxtxq8" path="res://scenes/CameraRig/camera_rig.tscn" id="5_6xr0r"]
+[ext_resource type="Shader" path="res://shaders/water_shader.gdshader" id="6_knm5q"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_h1kar"]
-sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
 ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
 
 [sub_resource type="Sky" id="Sky_85xy5"]
@@ -19,6 +19,23 @@ sky = SubResource("Sky_85xy5")
 tonemap_mode = 2
 glow_enabled = true
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_f343k"]
+render_priority = 0
+shader = ExtResource("6_knm5q")
+shader_parameter/WATER_COL = Vector4(0.04, 0.38, 0.88, 1)
+shader_parameter/WATER2_COL = Vector4(0.04, 0.35, 0.78, 1)
+shader_parameter/FOAM_COL = Vector4(0.8125, 0.9609, 0.9648, 1)
+shader_parameter/distortion_speed = 2.0
+shader_parameter/tile = Vector2(50, 50)
+shader_parameter/height = 10.0
+shader_parameter/wave_size = Vector2(6, 2)
+shader_parameter/wave_speed = 3.755
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_44ihv"]
+size = Vector2(500, 500)
+subdivide_width = 64
+subdivide_depth = 64
+
 [node name="world_1" type="Node3D"]
 script = ExtResource("1_1yn6n")
 
@@ -26,10 +43,10 @@ script = ExtResource("1_1yn6n")
 environment = SubResource("Environment_xosjl")
 
 [node name="Player" parent="." instance=ExtResource("3_p4xve")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 1.03071, 0)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 5.19569, 0)
 
 [node name="Map" type="Node3D" parent="."]
-transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 0, 0)
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 4.16498, 0)
 
 [node name="forground_renders" type="Node3D" parent="Map"]
 
@@ -99,3 +116,8 @@ size = Vector3(3, 1, 42)
 material = ExtResource("2_scxr5")
 
 [node name="camera_rig" parent="." instance=ExtResource("5_6xr0r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.16498, 0)
+
+[node name="Water" type="MeshInstance3D" parent="."]
+material_override = SubResource("ShaderMaterial_f343k")
+mesh = SubResource("PlaneMesh_44ihv")
