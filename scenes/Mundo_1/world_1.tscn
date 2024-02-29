@@ -1,17 +1,24 @@
-[gd_scene load_steps=12 format=3 uid="uid://dpaxieur8k1mo"]
+[gd_scene load_steps=16 format=3 uid="uid://dpaxieur8k1mo"]
 
 [ext_resource type="Script" path="res://scenes/Mundo_1/world_1.gd" id="1_1yn6n"]
 [ext_resource type="Material" uid="uid://djwgxm0207ddi" path="res://assets/materials/floor_prototype_material.tres" id="1_mowew"]
 [ext_resource type="Material" uid="uid://d060p4onr0x4a" path="res://assets/materials/wall_prototype_material.tres" id="2_scxr5"]
 [ext_resource type="PackedScene" uid="uid://c5ckxso6io5c" path="res://scenes/Player/Player.tscn" id="3_p4xve"]
 [ext_resource type="PackedScene" uid="uid://bvgdfnfqxtxq8" path="res://scenes/CameraRig/camera_rig.tscn" id="5_6xr0r"]
+[ext_resource type="PackedScene" uid="uid://c04di418yb57i" path="res://assets/models/map/kaypack_dungeon/wall_archedwindow_open.gltf.glb" id="5_d55u0"]
 [ext_resource type="Shader" path="res://shaders/water_shader.gdshader" id="6_knm5q"]
+[ext_resource type="PackedScene" uid="uid://b2d3dybxghomp" path="res://assets/models/map/kaypack_dungeon/wall.gltf.glb" id="6_ljffv"]
+[ext_resource type="PackedScene" uid="uid://bbo2ms4sr88ul" path="res://assets/models/map/kaypack_dungeon/table_long_decorated_C.gltf.glb" id="8_2p73l"]
+[ext_resource type="PackedScene" uid="uid://cmkh2fdoi6ngi" path="res://assets/models/map/kaypack_dungeon/wall_corner.gltf.glb" id="9_lify7"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_h1kar"]
+sky_top_color = Color(0.0470588, 0.407843, 0.933333, 1)
+sky_horizon_color = Color(0, 0.717647, 0.933333, 1)
 ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
 
 [sub_resource type="Sky" id="Sky_85xy5"]
 sky_material = SubResource("ProceduralSkyMaterial_h1kar")
+radiance_size = 2
 
 [sub_resource type="Environment" id="Environment_xosjl"]
 background_mode = 2
@@ -26,10 +33,10 @@ shader_parameter/WATER_COL = Vector4(0.04, 0.38, 0.88, 1)
 shader_parameter/WATER2_COL = Vector4(0.04, 0.35, 0.78, 1)
 shader_parameter/FOAM_COL = Vector4(0.8125, 0.9609, 0.9648, 1)
 shader_parameter/distortion_speed = 2.0
-shader_parameter/tile = Vector2(50, 50)
-shader_parameter/height = 10.0
-shader_parameter/wave_size = Vector2(6, 2)
-shader_parameter/wave_speed = 3.755
+shader_parameter/tile = Vector2(90, 90)
+shader_parameter/height = 4.2
+shader_parameter/wave_size = Vector2(2, 2)
+shader_parameter/wave_speed = 1.5
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_44ihv"]
 size = Vector2(500, 500)
@@ -43,7 +50,7 @@ script = ExtResource("1_1yn6n")
 environment = SubResource("Environment_xosjl")
 
 [node name="Player" parent="." instance=ExtResource("3_p4xve")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 5.19569, 0)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -20, 4.73604, 17)
 
 [node name="Map" type="Node3D" parent="."]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 4.16498, 0)
@@ -109,11 +116,26 @@ use_collision = true
 size = Vector3(3, 1, 13)
 material = ExtResource("2_scxr5")
 
-[node name="wall3" type="CSGBox3D" parent="Map/background_renders"]
-transform = Transform3D(0, -8.9407e-08, 1, -1, -4.37114e-08, 0, 4.37114e-08, -1, -8.9407e-08, -14.4041, 1.99374, -22.6852)
-use_collision = true
-size = Vector3(3, 1, 42)
-material = ExtResource("2_scxr5")
+[node name="wall_archedwindow_open_gltf" parent="Map/background_renders" instance=ExtResource("5_d55u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.1482, 0.5, -21.9152)
+
+[node name="wall_archedwindow_open_gltf2" parent="Map/background_renders" instance=ExtResource("5_d55u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.1492, 0.5, -21.9228)
+
+[node name="wall_gltf" parent="Map/background_renders" instance=ExtResource("6_ljffv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.1776, 0.5, -21.939)
+
+[node name="wall_gltf2" parent="Map/background_renders" instance=ExtResource("6_ljffv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.1583, 0.5, -21.9368)
+
+[node name="wall_gltf3" parent="Map/background_renders" instance=ExtResource("6_ljffv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.1738, 0.5, -21.9251)
+
+[node name="wall_corner_gltf" parent="Map/background_renders" instance=ExtResource("9_lify7")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -35.4028, 0.5, -21.9024)
+
+[node name="table_long_decorated_C_gltf" parent="Map/background_renders" instance=ExtResource("8_2p73l")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -20.514, 0.500001, -19.9579)
 
 [node name="camera_rig" parent="." instance=ExtResource("5_6xr0r")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.16498, 0)
