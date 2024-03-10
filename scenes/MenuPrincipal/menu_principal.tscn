@@ -50,7 +50,7 @@ layout_mode = 2
 layout_mode = 2
 theme_override_fonts/font = SubResource("SystemFont_i8qar")
 theme_override_font_sizes/font_size = 120
-text = "Elden Wrong"
+text = "Features 3d"
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
@@ -72,7 +72,7 @@ size_flags_vertical = 4
 focus_neighbor_top = NodePath("../btn_quit")
 focus_neighbor_bottom = NodePath("../btn_quit")
 theme_override_font_sizes/font_size = 42
-text = "Começar"
+text = "Novo jogo"
 
 [node name="btn_quit" type="Button" parent="TextureRect/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(280, 80)

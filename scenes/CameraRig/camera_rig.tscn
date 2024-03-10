@@ -10,29 +10,31 @@ shader_parameter/SCALE = 0.5
 shader_parameter/SOFTNESS = 0.45
 shader_parameter/BASE_OPACITY = 0.99
 
-[node name="camera_rig" type="Node3D"]
+[node name="camera_outer_gimbal" type="Node3D"]
 script = ExtResource("1_2qfhw")
 
-[node name="base_camera" type="Camera3D" parent="."]
+[node name="camera_inner_gimbal" type="Node3D" parent="."]
+
+[node name="base_camera" type="Camera3D" parent="camera_inner_gimbal"]
 cull_mask = 0
 
-[node name="background_viewport_container" type="SubViewportContainer" parent="base_camera"]
+[node name="background_viewport_container" type="SubViewportContainer" parent="camera_inner_gimbal/base_camera"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="background_viewport" type="SubViewport" parent="base_camera/background_viewport_container"]
+[node name="background_viewport" type="SubViewport" parent="camera_inner_gimbal/base_camera/background_viewport_container"]
 transparent_bg = true
 handle_input_locally = false
 render_target_update_mode = 4
 
-[node name="background_camera" type="Camera3D" parent="base_camera/background_viewport_container/background_viewport"]
+[node name="background_camera" type="Camera3D" parent="camera_inner_gimbal/base_camera/background_viewport_container/background_viewport"]
 cull_mask = 1
 size = 15.0
 
-[node name="forground_viewport_container" type="SubViewportContainer" parent="base_camera"]
+[node name="forground_viewport_container" type="SubViewportContainer" parent="camera_inner_gimbal/base_camera"]
 material = SubResource("ShaderMaterial_xdav5")
 anchors_preset = 15
 anchor_right = 1.0
@@ -40,11 +42,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="forground_viewport" type="SubViewport" parent="base_camera/forground_viewport_container"]
+[node name="forground_viewport" type="SubViewport" parent="camera_inner_gimbal/base_camera/forground_viewport_container"]
 transparent_bg = true
 handle_input_locally = false
 render_target_update_mode = 4
 
-[node name="forground_camera" type="Camera3D" parent="base_camera/forground_viewport_container/forground_viewport"]
+[node name="forground_camera" type="Camera3D" parent="camera_inner_gimbal/base_camera/forground_viewport_container/forground_viewport"]
 cull_mask = 2
 size = 15.0

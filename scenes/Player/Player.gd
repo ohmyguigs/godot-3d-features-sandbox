@@ -21,7 +21,7 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 func _ready():
 	GameManager.set_player1(self)
-
+	
 func get_derived_velocity():
 	if is_rolling:
 		return ROLL_SPEED
