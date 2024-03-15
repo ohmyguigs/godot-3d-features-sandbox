@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bxano43x0ptv"
-path="res://.godot/imported/menu_bg_image.jpg-8462b8c2a2fdbccdb4e3445afd192b79.ctex"
+uid="uid://cbiqu8rpvt27p"
+path="res://.godot/imported/survivorMaleB.png-2ae318ca98e0ab7712eb9e15545cb3f9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/menu_bg_image.jpg"
-dest_files=["res://.godot/imported/menu_bg_image.jpg-8462b8c2a2fdbccdb4e3445afd192b79.ctex"]
+source_file="res://assets/textures/survivorMaleB.png"
+dest_files=["res://.godot/imported/survivorMaleB.png-2ae318ca98e0ab7712eb9e15545cb3f9.ctex"]
 
 [params]
 
