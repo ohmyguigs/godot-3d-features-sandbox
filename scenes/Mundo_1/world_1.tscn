@@ -1,9 +1,12 @@
-[gd_scene load_steps=14 format=3 uid="uid://dpaxieur8k1mo"]
+[gd_scene load_steps=17 format=3 uid="uid://dpaxieur8k1mo"]
 
 [ext_resource type="Script" path="res://scenes/Mundo_1/world_1.gd" id="1_1yn6n"]
 [ext_resource type="PackedScene" uid="uid://c5ckxso6io5c" path="res://scenes/Player/Player.tscn" id="3_p4xve"]
 [ext_resource type="Texture2D" uid="uid://bgpkb50kny57p" path="res://assets/models/map/kaypack_dungeon/floor_foundation_allsides_dungeon_texture.png" id="4_5hoav"]
+[ext_resource type="PackedScene" uid="uid://b2d3dybxghomp" path="res://assets/models/map/kaypack_dungeon/wall.gltf.glb" id="5_cygqp"]
 [ext_resource type="Shader" path="res://shaders/water_shader.gdshader" id="6_knm5q"]
+[ext_resource type="PackedScene" uid="uid://b3q44p0xe12tb" path="res://assets/models/map/kaypack_dungeon/wall_doorway_scaffold.glb" id="6_nmeqn"]
+[ext_resource type="PackedScene" uid="uid://bvt1odwvidhqr" path="res://assets/models/map/kaypack_dungeon/wall_scaffold.gltf.glb" id="7_2x4m5"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_h1kar"]
 sky_top_color = Color(0.0470588, 0.407843, 0.933333, 1)
@@ -106,3 +109,12 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="firelink_shrine/floor_foundation_allsides_gltf/floor_foundation_allsides/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00530999, 0.99936, 0.000427246)
 shape = SubResource("BoxShape3D_g3rlv")
+
+[node name="wall_gltf" parent="firelink_shrine" instance=ExtResource("5_cygqp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.25696, 8.08288, 7.28758)
+
+[node name="wall_doorway_scaffold" parent="." instance=ExtResource("6_nmeqn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.22652, 8.08288, -7.25143)
+
+[node name="wall_scaffold_gltf" parent="." instance=ExtResource("7_2x4m5")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -7.15999, 8.08288, 0.650563)

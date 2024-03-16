@@ -43,22 +43,31 @@ func reset_camera_y_rotation_to_player():
 	yGimbal.global_rotation.y = self.global_rotation.y
 
 func reset_player_y_rotation_to_camera():
-	var inendedRotation = yGimbal.global_rotation.y
-	self.global_rotation.y = yGimbal.global_rotation.y
-	yGimbal.global_rotation.y = inendedRotation
+	var inetndedRotation = yGimbal.global_rotation.y
+	self.global_rotation.y = inetndedRotation
+	yGimbal.global_rotation.y = inetndedRotation
 
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
 		if event.relative.x != 0:
 			var dir = 1 if invert_x else -1
 			if is_idle:
+				print("1-yGimbalRot: %f" % [yGimbal.global_rotation.y])
 				yGimbal.rotate_object_local(Vector3.UP, dir * event.relative.x * mouse_sensitivity)
+				print("2-yGimbalRot: %f" % [yGimbal.global_rotation.y])
 			else:
 				self.rotate_object_local(Vector3.UP, dir * event.relative.x * mouse_sensitivity)
+				print("selfRot: %f" % [dir * event.relative.x * mouse_sensitivity])
 		if event.relative.y != 0:
 			var dir = 1 if invert_y else -1
+			var xGimbalCurrentRotationAngle = xGimbal.global_rotation.x
+			print("1-xGimbalRot: %f" % [xGimbalCurrentRotationAngle])
+			#if xGimbalCurrentRotationAngle <= -0.313:
+				#xGimbal.global_rotation.x = -0.313
+				#return # clamping
 			xGimbal.rotate_object_local(Vector3.RIGHT, dir * event.relative.y * mouse_sensitivity)
-	
+			print("2-xGimbalRot: %f" % [xGimbalCurrentRotationAngle])
+
 func get_derived_velocity():
 	if is_rolling:
 		return ROLL_SPEED
