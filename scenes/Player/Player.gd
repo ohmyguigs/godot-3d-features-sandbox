@@ -1,7 +1,7 @@
 extends CharacterBody3D
 class_name PlayerClass
 
-@onready var animationPlayer = $Visuals/char1_in_place_mixamo/AnimationPlayer as AnimationPlayer
+@onready var animationPlayer = $Visuals/character_1/AnimationPlayer as AnimationPlayer
 @onready var visuals = $Visuals as Node3D
 
 @onready var running_pressed: bool = false
@@ -39,22 +39,17 @@ func _ready():
 	GameManager.set_player1(self)
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
-func reset_camera_y_rotation_to_player():
-	yGimbal.global_rotation.y = self.global_rotation.y
-
-func reset_player_y_rotation_to_camera():
-	var inetndedRotation = yGimbal.global_rotation.y
-	self.global_rotation.y = inetndedRotation
-	yGimbal.global_rotation.y = inetndedRotation
+func adjust_motion_direction_rotation_to_camera(direction):
+	if yGimbal.rotation.y == self.rotation.y:
+		return # do nothing if camera already aligned
+	return direction.rotated(Vector3.UP, yGimbal.rotation.y)
 
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
 		if event.relative.x != 0:
 			var dir = 1 if invert_x else -1
 			if is_idle:
-				print("1-yGimbalRot: %f" % [yGimbal.global_rotation.y])
 				yGimbal.rotate_object_local(Vector3.UP, dir * event.relative.x * mouse_sensitivity)
-				print("2-yGimbalRot: %f" % [yGimbal.global_rotation.y])
 			else:
 				self.rotate_object_local(Vector3.UP, dir * event.relative.x * mouse_sensitivity)
 				print("selfRot: %f" % [dir * event.relative.x * mouse_sensitivity])
@@ -94,9 +89,10 @@ func _physics_process(delta):
 			is_rolling = false
 
 	var input_dir = Input.get_vector("walk_left", "walk_right", "walk_front", "walk_back")
-	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	var direction = (self.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	
 	if direction:
+		print("direction: %s" % [direction])
 		is_idle = false
 		if Input.is_action_pressed("sprint"):
 			running_pressed = true if !is_rolling else false
@@ -114,10 +110,11 @@ func _physics_process(delta):
 			velocity.x = roll_direction_cache.x * speed
 			velocity.z = roll_direction_cache.z * speed
 		else:
+			var rotatedDirection = adjust_motion_direction_rotation_to_camera(direction)
+			direction = rotatedDirection
 			velocity.x = direction.x * speed
 			velocity.z = direction.z * speed
-			visuals.look_at(direction + position)
-			reset_player_y_rotation_to_camera()
+			visuals.look_at(direction + self.position)
 
 		if speed == SLOW_WALK_SPEED:
 			animationPlayer.play("walk_slow", 0.2)
