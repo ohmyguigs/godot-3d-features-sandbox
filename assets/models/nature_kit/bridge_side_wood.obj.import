@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bdyg1y58f0har"
+path="res://.godot/imported/bridge_side_wood.obj-7d78478c6f1bea4a3efaa9b86c101d49.mesh"
+
+[deps]
+
+files=["res://.godot/imported/bridge_side_wood.obj-7d78478c6f1bea4a3efaa9b86c101d49.mesh"]
+
+source_file="res://assets/models/nature_kit/bridge_side_wood.obj"
+dest_files=["res://.godot/imported/bridge_side_wood.obj-7d78478c6f1bea4a3efaa9b86c101d49.mesh", "res://.godot/imported/bridge_side_wood.obj-7d78478c6f1bea4a3efaa9b86c101d49.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

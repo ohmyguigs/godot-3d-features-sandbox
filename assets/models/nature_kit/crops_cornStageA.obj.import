@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cuvdi4tg7co7k"
+path="res://.godot/imported/crops_cornStageA.obj-5a67871b4c94b0ecc449a5308095611c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/crops_cornStageA.obj-5a67871b4c94b0ecc449a5308095611c.mesh"]
+
+source_file="res://assets/models/nature_kit/crops_cornStageA.obj"
+dest_files=["res://.godot/imported/crops_cornStageA.obj-5a67871b4c94b0ecc449a5308095611c.mesh", "res://.godot/imported/crops_cornStageA.obj-5a67871b4c94b0ecc449a5308095611c.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

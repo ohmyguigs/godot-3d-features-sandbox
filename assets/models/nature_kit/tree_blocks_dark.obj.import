@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cqdogembuud3s"
+path="res://.godot/imported/tree_blocks_dark.obj-3fc89a2f8c7d51c4f19f9efa4a03eae9.mesh"
+
+[deps]
+
+files=["res://.godot/imported/tree_blocks_dark.obj-3fc89a2f8c7d51c4f19f9efa4a03eae9.mesh"]
+
+source_file="res://assets/models/nature_kit/tree_blocks_dark.obj"
+dest_files=["res://.godot/imported/tree_blocks_dark.obj-3fc89a2f8c7d51c4f19f9efa4a03eae9.mesh", "res://.godot/imported/tree_blocks_dark.obj-3fc89a2f8c7d51c4f19f9efa4a03eae9.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

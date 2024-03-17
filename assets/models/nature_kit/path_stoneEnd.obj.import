@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bi6cv4iqc72of"
+path="res://.godot/imported/path_stoneEnd.obj-b79308b0324f187aa1ecb487ec6c815a.mesh"
+
+[deps]
+
+files=["res://.godot/imported/path_stoneEnd.obj-b79308b0324f187aa1ecb487ec6c815a.mesh"]
+
+source_file="res://assets/models/nature_kit/path_stoneEnd.obj"
+dest_files=["res://.godot/imported/path_stoneEnd.obj-b79308b0324f187aa1ecb487ec6c815a.mesh", "res://.godot/imported/path_stoneEnd.obj-b79308b0324f187aa1ecb487ec6c815a.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

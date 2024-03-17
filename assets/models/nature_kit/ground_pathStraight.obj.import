@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://uktarprq4rnm"
+path="res://.godot/imported/ground_pathStraight.obj-43a186a859f05093cf9c660c74f8f6f3.mesh"
+
+[deps]
+
+files=["res://.godot/imported/ground_pathStraight.obj-43a186a859f05093cf9c660c74f8f6f3.mesh"]
+
+source_file="res://assets/models/nature_kit/ground_pathStraight.obj"
+dest_files=["res://.godot/imported/ground_pathStraight.obj-43a186a859f05093cf9c660c74f8f6f3.mesh", "res://.godot/imported/ground_pathStraight.obj-43a186a859f05093cf9c660c74f8f6f3.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

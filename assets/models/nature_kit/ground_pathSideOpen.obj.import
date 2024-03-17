@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cvs8641f03iws"
+path="res://.godot/imported/ground_pathSideOpen.obj-d197325d9058d5fbb185a9609dfdfa08.mesh"
+
+[deps]
+
+files=["res://.godot/imported/ground_pathSideOpen.obj-d197325d9058d5fbb185a9609dfdfa08.mesh"]
+
+source_file="res://assets/models/nature_kit/ground_pathSideOpen.obj"
+dest_files=["res://.godot/imported/ground_pathSideOpen.obj-d197325d9058d5fbb185a9609dfdfa08.mesh", "res://.godot/imported/ground_pathSideOpen.obj-d197325d9058d5fbb185a9609dfdfa08.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

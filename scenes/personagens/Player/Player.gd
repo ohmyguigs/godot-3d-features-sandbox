@@ -49,52 +49,60 @@ func adjust_motion_direction_rotation_to_camera(direction):
 		return direction # do nothing if camera already aligned
 	return direction.rotated(Vector3.UP, yGimbal.rotation.y)
 	
+func rotate_camera_xgimbal_vertical(dir, str, sensitivity):
+	xGimbal.rotate_object_local(Vector3.RIGHT, dir * str * sensitivity)
+
+func rotate_camera_ygimbal_horizontal(dir, str, sensitivity):
+	yGimbal.rotate_object_local(Vector3.UP, dir * str * sensitivity)
+	
+func rotate_player_horizontal(dir, str, sensitivity):
+	self.rotate_object_local(Vector3.UP, dir * str * sensitivity)
+	
 func handle_joystick_camera_control():
 	if Input.is_action_pressed("camera_up") || Input.is_action_just_pressed("camera_up"):
 		var dir = 1 if invert_x else -1
 		var uStr = Input.get_action_strength("camera_up")
-		var xGimbalCurrentRotationAngle = xGimbal.global_rotation.x
-		xGimbal.rotate_object_local(Vector3.RIGHT, dir * uStr * jouystick_sensitivity)
+		rotate_camera_xgimbal_vertical(dir, uStr, jouystick_sensitivity)
 	if Input.is_action_pressed("camera_down"):
 		var dir = -1 if invert_x else 1
 		var dStr = Input.get_action_strength("camera_down")
-		var xGimbalCurrentRotationAngle = xGimbal.global_rotation.x
-		xGimbal.rotate_object_local(Vector3.RIGHT, dir * dStr * jouystick_sensitivity)
+		rotate_camera_xgimbal_vertical(dir, dStr, jouystick_sensitivity)
 	if Input.is_action_pressed("camera_left") || Input.is_action_just_pressed("camera_left"):
 		var dir = -1 if invert_y else 1
 		var lStr = Input.get_action_strength("camera_left")
 		if is_idle:
-			yGimbal.rotate_object_local(Vector3.UP, dir * lStr * jouystick_sensitivity)
+			rotate_camera_ygimbal_horizontal(dir, lStr, jouystick_sensitivity)
 		else:
-			self.rotate_object_local(Vector3.UP, dir * lStr * jouystick_sensitivity)
+			rotate_player_horizontal(dir, lStr, jouystick_sensitivity)
 	if Input.is_action_pressed("camera_right"):
 		var dir = 1 if invert_y else -1
 		var rStr = Input.get_action_strength("camera_right")
 		if is_idle:
-			yGimbal.rotate_object_local(Vector3.UP, dir * rStr * jouystick_sensitivity)
+			rotate_camera_ygimbal_horizontal(dir, rStr, jouystick_sensitivity)
 		else:
-			self.rotate_object_local(Vector3.UP, dir * rStr * jouystick_sensitivity)
+			rotate_player_horizontal(dir, rStr, jouystick_sensitivity)
 
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
 		if event.relative.x != 0:
 			var dir = 1 if invert_x else -1
 			if is_idle:
-				yGimbal.rotate_object_local(Vector3.UP, dir * event.relative.x * mouse_sensitivity)
+				rotate_camera_ygimbal_horizontal(dir, event.relative.x, mouse_sensitivity)
 			else:
-				self.rotate_object_local(Vector3.UP, dir * event.relative.x * mouse_sensitivity)
+				rotate_player_horizontal(dir, event.relative.x, mouse_sensitivity)
 		if event.relative.y != 0:
 			var dir = 1 if invert_y else -1
 			var xGimbalCurrentRotationAngle = xGimbal.global_rotation.x
-			print("1-xGimbalRot: %f" % [xGimbalCurrentRotationAngle])
-			#if xGimbalCurrentRotationAngle <= -0.313:
+			if xGimbalCurrentRotationAngle <= -0.313:
 				#xGimbal.rotation.x = lerp(xGimbal.rotation.x, -0.313, mouse_sensitivity)
-				#return # clamping
-			#if xGimbalCurrentRotationAngle >= -0.024:
+				var clampedStr = event.relative.y if event.relative.y < 0 else 0
+				rotate_camera_xgimbal_vertical(dir, clampedStr, mouse_sensitivity) # prevent moving
+			elif xGimbalCurrentRotationAngle >= 0.313:
 				#xGimbal.rotation.x = lerp(xGimbal.rotation.x, -0.025, mouse_sensitivity)
-				#return # clamping
-			xGimbal.rotate_object_local(Vector3.RIGHT, dir * event.relative.y * mouse_sensitivity)
-			print("2-xGimbalRot: %f" % [xGimbalCurrentRotationAngle])
+				var clampedStr = event.relative.y if event.relative.y > 0 else 0
+				rotate_camera_xgimbal_vertical(dir, clampedStr, mouse_sensitivity) # prevent moving
+			else:
+				rotate_camera_xgimbal_vertical(dir, event.relative.y, mouse_sensitivity)
 
 func get_derived_velocity():
 	if is_rolling:
@@ -160,6 +168,8 @@ func _physics_process(delta):
 		elif speed == ROLL_SPEED:
 			animationPlayer.play("roll", 0.2)
 	else:
+		if Input.is_action_just_released("sprint"):
+			running_pressed = false
 		var speed = get_derived_velocity()
 		if is_rolling:
 			velocity.x = roll_direction_cache.x * speed

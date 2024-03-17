@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://dpaxieur8k1mo"]
+[gd_scene load_steps=50 format=3 uid="uid://dpaxieur8k1mo"]
 
 [ext_resource type="Script" path="res://scenes/mundos/Mundo_1/world_1.gd" id="1_1yn6n"]
 [ext_resource type="PackedScene" uid="uid://c5ckxso6io5c" path="res://scenes/personagens/Player/Player.tscn" id="3_p4xve"]
@@ -11,6 +11,14 @@
 [ext_resource type="Texture2D" uid="uid://l1pfnlt3f1t" path="res://assets/models/map/kaypack_dungeon/wall_corner_scaffold_dungeon_texture.png" id="8_y5ud6"]
 [ext_resource type="Texture2D" uid="uid://ddxmvew1pvrvt" path="res://assets/models/map/kaypack_dungeon/wall_window_open_scaffold_dungeon_texture.png" id="9_on82w"]
 [ext_resource type="PackedScene" uid="uid://hrug4wy4csdb" path="res://scenes/personagens/npc/idle/npc_idle.tscn" id="11_ags0j"]
+[ext_resource type="ArrayMesh" uid="uid://d03o72so3t1dt" path="res://assets/models/nature_kit/rock_tallF.obj" id="12_umlla"]
+[ext_resource type="ArrayMesh" uid="uid://co5vtbkcinmqm" path="res://assets/models/nature_kit/tree_oak_dark.obj" id="13_63i2d"]
+[ext_resource type="ArrayMesh" uid="uid://dyhpcr48l2c6b" path="res://assets/models/nature_kit/rock_largeC.obj" id="13_v2wwh"]
+[ext_resource type="ArrayMesh" uid="uid://dufmdmwn71sg1" path="res://assets/models/nature_kit/rock_largeD.obj" id="14_0svfl"]
+[ext_resource type="ArrayMesh" uid="uid://bdi7lrssmt57v" path="res://assets/models/nature_kit/tree_fat_darkh.obj" id="16_lkmmi"]
+[ext_resource type="ArrayMesh" uid="uid://rqd3lgfmacga" path="res://assets/models/nature_kit/tree_pineDefaultA.obj" id="17_seyv1"]
+[ext_resource type="ArrayMesh" uid="uid://cqtoh1iogqldk" path="res://assets/models/nature_kit/tree_thin_dark.obj" id="18_07d5i"]
+[ext_resource type="ArrayMesh" uid="uid://bi8kul3jyfvgd" path="res://assets/models/nature_kit/tree_simple.obj" id="19_8k61h"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_h1kar"]
 sky_top_color = Color(0.0470588, 0.407843, 0.933333, 1)
@@ -290,6 +298,12 @@ shadow_mesh = SubResource("ArrayMesh_lahpo")
 [sub_resource type="BoxShape3D" id="BoxShape3D_258ye"]
 size = Vector3(1.00456, 4.03461, 4.04377)
 
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_x7niu"]
+points = PackedVector3Array(0.00969876, 0.0516638, 0.238196, -0.0071454, 0.0497689, 0.240125, -0.0806438, 0.578196, 0.0123919, -0.218511, 0.00556201, -0.128667, 0.22047, 0.00640822, 0.125839, 0.1228, 0.564561, -0.0923507, -0.221384, 0.00188427, 0.127888, -0.126524, 0.55961, -0.0906783, 0.219351, 0.00784028, -0.127634, 0.119674, 0.578196, 0.0032989, -0.0072335, 0.560661, -0.159484, 0.0376752, 0.268682, 0.185413, -0.162598, 0.268682, 0.112567, -0.0157138, 0.0147826, -0.243581, -0.0533257, 0.268682, 0.176269, 0.00131047, 0.578196, 0.0397216, -0.015936, 0.0112317, 0.2443, 0.128765, 0.268682, 0.130753, 0.00996088, 0.00968476, -0.248122, 0.128652, 0.550048, -0.0903811, -0.124903, 0.556152, -0.0474726, 0.00978653, 0.558485, -0.158226, -0.171689, 0.268682, 0.103474, -0.00714566, 0.261517, 0.189291, 0.0183795, 0.0133985, 0.24237, 0.101447, 0.268682, 0.14899, 0.202931, 0.0768605, 0.120558, 0.209258, 0.00963023, 0.133033, -0.117053, 0.268682, 0.139897, 0.00131047, 0.124254, 0.225613, -0.00712725, 0.0418069, -0.242051, -0.135102, 0.508491, -0.0906953)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_v3p0b"]
+data = PackedVector3Array(-0.2286, 0.5683, 0.2966, -0.5344, 0.3122, 0.1561, -0.3669, 0.5683, 0.1162, -0.5344, 0.3122, 0.1561, -0.2286, 0.5683, 0.2966, -0.5344, 0.2354, 0.2337, -0.5344, 0.2354, 0.2337, -0.2286, 0.5683, 0.2966, -0.3652, 0.2354, 0.4545, -0.2914, 0, 0.3692, -0.1302, 0.2354, 0.5151, -0.1034, 0, 0.4177, -0.1302, 0.2354, 0.5151, -0.2914, 0, 0.3692, -0.3652, 0.2354, 0.4545, 0.4441, 0.2354, -0.2337, -0.0362, 0.5683, -0.3143, -0.0599, 0.2354, -0.5151, -0.0362, 0.5683, -0.3143, 0.4441, 0.2354, -0.2337, 0.2813, 0.5683, -0.137, -0.0922, 0.5683, -0.2773, -0.1401, 0.5683, -0.152, -0.1927, 0.4018, -0.319, 0.5344, 0.2354, 0.1045, 0.2906, 0.5683, 0.1718, 0.3381, 0.5683, 0.0761, 0.2906, 0.5683, 0.1718, 0.5344, 0.2354, 0.1045, 0.3514, 0.2354, 0.4729, 0.2906, 0.5683, 0.1718, 0.3514, 0.2354, 0.4729, 0.2872, 0.4018, 0.3905, -0.1302, 0.2354, 0.5151, 0.2872, 0.4018, 0.3905, 0.3514, 0.2354, 0.4729, 0.2872, 0.4018, 0.3905, -0.1302, 0.2354, 0.5151, -0.0806, 0.5683, 0.3348, 0.2872, 0.4018, 0.3905, -0.0806, 0.5683, 0.3348, 0.0712, 0.5683, 0.3215, 0.3561, 0, -0.1814, -0.0551, 0.1474, -0.4745, 0.1545, 0, -0.294, -0.0551, 0.1474, -0.4745, 0.3561, 0, -0.1814, 0.4441, 0.2354, -0.2337, -0.0551, 0.1474, -0.4745, 0.4441, 0.2354, -0.2337, -0.0599, 0.2354, -0.5151, -0.4897, 0.2354, 0.0954, -0.5344, 0.2354, 0.2337, -0.5077, 0.0815, 0.1498, 0.2872, 0.4018, 0.3905, 0.0712, 0.5683, 0.3215, 0.2906, 0.5683, 0.1718, 0.3561, 0, -0.1814, 0.5344, 0.2354, 0.1045, 0.4441, 0.2354, -0.2337, 0.5344, 0.2354, 0.1045, 0.3561, 0, -0.1814, 0.4283, 0, 0.0891, -0.5344, 0.3122, 0.1561, -0.5344, 0.2354, 0.2337, -0.4897, 0.2354, 0.0954, -0.5077, 0.0815, 0.1498, -0.2914, 0, 0.3692, -0.4669, 0, 0.14, -0.2914, 0, 0.3692, -0.5077, 0.0815, 0.1498, -0.5344, 0.2354, 0.2337, -0.2914, 0, 0.3692, -0.5344, 0.2354, 0.2337, -0.3652, 0.2354, 0.4545, -0.1034, 0, 0.4177, 0.3167, 0.1177, 0.4283, 0.118, 0, 0.3982, 0.3167, 0.1177, 0.4283, -0.1034, 0, 0.4177, -0.1302, 0.2354, 0.5151, 0.3167, 0.1177, 0.4283, -0.1302, 0.2354, 0.5151, 0.3514, 0.2354, 0.4729, -0.3652, 0.2354, 0.4545, -0.0806, 0.5683, 0.3348, -0.1302, 0.2354, 0.5151, -0.0806, 0.5683, 0.3348, -0.3652, 0.2354, 0.4545, -0.2286, 0.5683, 0.2966, -0.1927, 0.4018, -0.319, -0.212, 0.2354, -0.1174, -0.2374, 0.2354, -0.3977, -0.212, 0.2354, -0.1174, -0.1927, 0.4018, -0.319, -0.1401, 0.5683, -0.152, -0.212, 0.2354, -0.1174, -0.1401, 0.5683, -0.152, -0.1321, 0.5683, -0.0637, 0.5344, 0.2354, 0.1045, 0.2813, 0.5683, -0.137, 0.4441, 0.2354, -0.2337, 0.2813, 0.5683, -0.137, 0.5344, 0.2354, 0.1045, 0.3381, 0.5683, 0.0761, 0.1545, 0, -0.294, -0.0551, 0.1474, -0.4745, -0.1101, 0, -0.3649, 0.3551, 0, 0.2365, 0.5344, 0.2354, 0.1045, 0.4283, 0, 0.0891, 0.5344, 0.2354, 0.1045, 0.3551, 0, 0.2365, 0.3514, 0.2354, 0.4729, 0.3514, 0.2354, 0.4729, 0.3551, 0, 0.2365, 0.3167, 0.1177, 0.4283, -0.212, 0.2354, -0.1174, -0.5344, 0.3122, 0.1561, -0.4897, 0.2354, 0.0954, -0.5344, 0.3122, 0.1561, -0.212, 0.2354, -0.1174, -0.1321, 0.5683, -0.0637, -0.5344, 0.3122, 0.1561, -0.1321, 0.5683, -0.0637, -0.3669, 0.5683, 0.1162, -0.1688, 0, -0.0884, -0.5077, 0.0815, 0.1498, -0.4669, 0, 0.14, -0.5077, 0.0815, 0.1498, -0.1688, 0, -0.0884, -0.212, 0.2354, -0.1174, -0.5077, 0.0815, 0.1498, -0.212, 0.2354, -0.1174, -0.4897, 0.2354, 0.0954, -0.0599, 0.2354, -0.5151, -0.1927, 0.4018, -0.319, -0.2374, 0.2354, -0.3977, -0.1927, 0.4018, -0.319, -0.0599, 0.2354, -0.5151, -0.0362, 0.5683, -0.3143, -0.1927, 0.4018, -0.319, -0.0362, 0.5683, -0.3143, -0.0922, 0.5683, -0.2773, -0.1101, 0, -0.3649, -0.2374, 0.2354, -0.3977, -0.1891, 0, -0.3126, -0.2374, 0.2354, -0.3977, -0.1101, 0, -0.3649, -0.0551, 0.1474, -0.4745, -0.2374, 0.2354, -0.3977, -0.0551, 0.1474, -0.4745, -0.0599, 0.2354, -0.5151, 0.3551, 0, 0.2365, 0.118, 0, 0.3982, 0.3167, 0.1177, 0.4283, -0.212, 0.2354, -0.1174, -0.1891, 0, -0.3126, -0.2374, 0.2354, -0.3977, -0.1891, 0, -0.3126, -0.212, 0.2354, -0.1174, -0.1688, 0, -0.0884, 0.3561, 0, -0.1814, 0.3551, 0, 0.2365, 0.4283, 0, 0.0891, 0.3551, 0, 0.2365, 0.3561, 0, -0.1814, 0.1545, 0, -0.294, 0.3551, 0, 0.2365, 0.1545, 0, -0.294, 0.118, 0, 0.3982, 0.118, 0, 0.3982, 0.1545, 0, -0.294, -0.1101, 0, -0.3649, 0.118, 0, 0.3982, -0.1101, 0, -0.3649, -0.1034, 0, 0.4177, -0.1034, 0, 0.4177, -0.1101, 0, -0.3649, -0.1688, 0, -0.0884, -0.1034, 0, 0.4177, -0.1688, 0, -0.0884, -0.2914, 0, 0.3692, -0.2914, 0, 0.3692, -0.1688, 0, -0.0884, -0.4669, 0, 0.14, -0.1101, 0, -0.3649, -0.1891, 0, -0.3126, -0.1688, 0, -0.0884, -0.132, 0.5683, -0.0637, -0.1401, 0.5683, -0.152, -0.0922, 0.5683, -0.2773, -0.0922, 0.5683, -0.2773, -0.0806, 0.5683, 0.3348, -0.132, 0.5683, -0.0637, -0.0362, 0.5683, -0.3143, -0.0806, 0.5683, 0.3348, -0.0922, 0.5683, -0.2773, -0.0362, 0.5683, -0.3143, 0.0712, 0.5683, 0.3215, -0.0806, 0.5683, 0.3348, 0.2813, 0.5683, -0.137, 0.0712, 0.5683, 0.3215, -0.0362, 0.5683, -0.3143, 0.2813, 0.5683, -0.137, 0.2906, 0.5683, 0.1718, 0.0712, 0.5683, 0.3215, 0.2906, 0.5683, 0.1718, 0.2813, 0.5683, -0.137, 0.3381, 0.5683, 0.0761, -0.132, 0.5683, -0.0637, -0.0806, 0.5683, 0.3348, -0.2286, 0.5683, 0.2966, -0.132, 0.5683, -0.0637, -0.2286, 0.5683, 0.2966, -0.3668, 0.5683, 0.1162, 0.3514, 0.2354, 0.4729, 0.4441, 0.2354, -0.2337, 0.5344, 0.2354, 0.1045, 0.4441, 0.2354, -0.2337, 0.3514, 0.2354, 0.4729, -0.0599, 0.2354, -0.5151, -0.0599, 0.2354, -0.5151, 0.3514, 0.2354, 0.4729, -0.1302, 0.2354, 0.5151, -0.0599, 0.2354, -0.5151, -0.1302, 0.2354, 0.5151, -0.2374, 0.2354, -0.3977, -0.2374, 0.2354, -0.3977, -0.1302, 0.2354, 0.5151, -0.212, 0.2354, -0.1174, -0.3652, 0.2354, 0.4545, -0.212, 0.2354, -0.1174, -0.1302, 0.2354, 0.5151, -0.212, 0.2354, -0.1174, -0.3652, 0.2354, 0.4545, -0.4897, 0.2354, 0.0954, -0.4897, 0.2354, 0.0954, -0.3652, 0.2354, 0.4545, -0.5344, 0.2354, 0.2337)
+
 [node name="world_1" type="Node3D"]
 script = ExtResource("1_1yn6n")
 
@@ -514,6 +528,10 @@ shape = SubResource("ConvexPolygonShape3D_pd4mx")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="firelink_shrine/walls_-z/wall_doorway_scaffold2/wall_doorway_scaffold2/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_u1oqv")
 
+[node name="door2_portal" type="NavigationLink3D" parent="firelink_shrine/walls_-z/wall_doorway_scaffold2"]
+start_position = Vector3(8.816, 8.003, -7.2)
+end_position = Vector3(111.545, 13.1498, -72.3744)
+
 [node name="wall_doorway_scaffold3" type="Node3D" parent="firelink_shrine/walls_-z"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.816, 8.003, -7.2)
 
@@ -724,3 +742,155 @@ shape = SubResource("BoxShape3D_258ye")
 
 [node name="CharacterBody3D" parent="firelink_shrine" instance=ExtResource("11_ags0j")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 4.77882, 8.08288, -5.00914)
+
+[node name="ilhas" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72.4934, 4.33228, 0)
+
+[node name="big-rock" type="Node3D" parent="ilhas"]
+transform = Transform3D(60, 0, 103.923, 0, 120, 0, -103.923, 0, 60, -70.9572, -20, 0.0952377)
+
+[node name="RockTallF" type="MeshInstance3D" parent="ilhas/big-rock"]
+mesh = ExtResource("12_umlla")
+skeleton = NodePath("../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="ilhas/big-rock/RockTallF"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ilhas/big-rock/RockTallF/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_x7niu")
+
+[node name="TreeOakDark" type="MeshInstance3D" parent="ilhas/big-rock"]
+transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, 0.136642, 0.268616, 0.0296997)
+mesh = ExtResource("13_63i2d")
+skeleton = NodePath("../../..")
+
+[node name="TreeOakDark2" type="MeshInstance3D" parent="ilhas/big-rock"]
+transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, 0.111642, 0.268615, 0.063033)
+mesh = ExtResource("13_63i2d")
+skeleton = NodePath("../../..")
+
+[node name="TreeOakDark3" type="MeshInstance3D" parent="ilhas/big-rock"]
+transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, 0.103308, 0.268615, 0.0963663)
+mesh = ExtResource("13_63i2d")
+skeleton = NodePath("../../..")
+
+[node name="TreeOakDark4" type="MeshInstance3D" parent="ilhas/big-rock"]
+transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, 0.0783083, 0.268615, 0.1297)
+mesh = ExtResource("13_63i2d")
+skeleton = NodePath("../../..")
+
+[node name="TreeOakDark5" type="MeshInstance3D" parent="ilhas/big-rock"]
+transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, -0.00502503, 0.268615, 0.0796995)
+mesh = ExtResource("13_63i2d")
+skeleton = NodePath("../../..")
+
+[node name="TreeOakDark6" type="MeshInstance3D" parent="ilhas/big-rock"]
+transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, -0.00502503, 0.268615, 0.113033)
+mesh = ExtResource("13_63i2d")
+skeleton = NodePath("../../..")
+
+[node name="TreeOakDark7" type="MeshInstance3D" parent="ilhas/big-rock"]
+transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, 0.0283082, 0.268615, 0.113033)
+mesh = ExtResource("13_63i2d")
+skeleton = NodePath("../../..")
+
+[node name="TreeOakDark8" type="MeshInstance3D" parent="ilhas/big-rock"]
+transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, 0.0283079, 0.268615, 0.138033)
+mesh = ExtResource("13_63i2d")
+skeleton = NodePath("../../..")
+
+[node name="TreeOakDark9" type="MeshInstance3D" parent="ilhas/big-rock"]
+transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, 0.0533075, 0.268615, 0.146366)
+mesh = ExtResource("13_63i2d")
+skeleton = NodePath("../../..")
+
+[node name="RockLargeC" type="MeshInstance3D" parent="ilhas"]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 22.9044, -10.2494, -80.9903)
+mesh = ExtResource("13_v2wwh")
+skeleton = NodePath("../..")
+
+[node name="ilha_1" type="Node3D" parent="ilhas"]
+
+[node name="wall_doorway_scaffold" type="Node3D" parent="ilhas/ilha_1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 111.565, 13.1498, -72.3744)
+
+[node name="wall_doorway_scaffold" type="MeshInstance3D" parent="ilhas/ilha_1/wall_doorway_scaffold"]
+mesh = SubResource("ArrayMesh_jdhpk")
+skeleton = NodePath("")
+
+[node name="wall_doorway_scaffold_door" type="MeshInstance3D" parent="ilhas/ilha_1/wall_doorway_scaffold/wall_doorway_scaffold"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.820099, 0, 0)
+mesh = SubResource("ArrayMesh_r2pc7")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="ilhas/ilha_1/wall_doorway_scaffold/wall_doorway_scaffold/wall_doorway_scaffold_door"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ilhas/ilha_1/wall_doorway_scaffold/wall_doorway_scaffold/wall_doorway_scaffold_door/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_pd4mx")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="ilhas/ilha_1/wall_doorway_scaffold/wall_doorway_scaffold"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ilhas/ilha_1/wall_doorway_scaffold/wall_doorway_scaffold/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_u1oqv")
+
+[node name="ilha_1_portal" type="NavigationLink3D" parent="ilhas/ilha_1/wall_doorway_scaffold"]
+start_position = Vector3(111.545, 13.1498, -72.3744)
+end_position = Vector3(8.816, 8.003, -7.2)
+
+[node name="foundations" type="Node3D" parent="ilhas/ilha_1"]
+
+[node name="RockLargeD" type="MeshInstance3D" parent="ilhas/ilha_1/foundations"]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 114.345, -15.2494, -81.8532)
+mesh = ExtResource("14_0svfl")
+skeleton = NodePath("../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="ilhas/ilha_1/foundations/RockLargeD"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ilhas/ilha_1/foundations/RockLargeD/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_v3p0b")
+
+[node name="forest" type="Node3D" parent="ilhas/ilha_1"]
+
+[node name="TreeFatDarkh" type="MeshInstance3D" parent="ilhas/ilha_1/forest"]
+transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 127.949, 13.1656, -75.6586)
+mesh = ExtResource("16_lkmmi")
+skeleton = NodePath("../../../..")
+
+[node name="TreeOakDark" type="MeshInstance3D" parent="ilhas/ilha_1/forest"]
+transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 103.132, 13.1656, -70.9917)
+mesh = ExtResource("13_63i2d")
+skeleton = NodePath("../../../..")
+
+[node name="TreeOakDark2" type="MeshInstance3D" parent="ilhas/ilha_1/forest"]
+transform = Transform3D(-3.0598e-07, 0, 7, 0, 7, 0, -7, 0, -3.0598e-07, 120.132, 13.1656, -74.9917)
+mesh = ExtResource("13_63i2d")
+skeleton = NodePath("../../../..")
+
+[node name="TreePineDefaultA" type="MeshInstance3D" parent="ilhas/ilha_1/forest"]
+transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 99.5373, 13.1656, -76.5574)
+mesh = ExtResource("17_seyv1")
+skeleton = NodePath("../../../..")
+
+[node name="TreePineDefaultA2" type="MeshInstance3D" parent="ilhas/ilha_1/forest"]
+transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 103.537, 13.1656, -79.5574)
+mesh = ExtResource("17_seyv1")
+skeleton = NodePath("../../../..")
+
+[node name="TreePineDefaultA3" type="MeshInstance3D" parent="ilhas/ilha_1/forest"]
+transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 123.537, 13.1656, -78.5574)
+mesh = ExtResource("17_seyv1")
+skeleton = NodePath("../../../..")
+
+[node name="TreeThinDark" type="MeshInstance3D" parent="ilhas/ilha_1/forest"]
+transform = Transform3D(6.06218, 0, -3.5, 0, 7, 0, 3.5, 0, 6.06218, 128.533, 13.2201, -84.9723)
+mesh = ExtResource("18_07d5i")
+skeleton = NodePath("../../../..")
+
+[node name="TreeThinDark2" type="MeshInstance3D" parent="ilhas/ilha_1/forest"]
+transform = Transform3D(6.06218, 0, -3.5, 0, 7, 0, 3.5, 0, 6.06218, 113.533, 13.2201, -94.9723)
+mesh = ExtResource("18_07d5i")
+skeleton = NodePath("../../../..")
+
+[node name="TreeSimple" type="MeshInstance3D" parent="ilhas/ilha_1/forest"]
+transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 128.08, 13.1656, -80.3891)
+mesh = ExtResource("19_8k61h")
+skeleton = NodePath("../../../..")

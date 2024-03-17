@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://d3msnll5fg6jg"
+path="res://.godot/imported/campfire_planks.obj-c467f18dab0a31cec070c51444c4b8af.mesh"
+
+[deps]
+
+files=["res://.godot/imported/campfire_planks.obj-c467f18dab0a31cec070c51444c4b8af.mesh"]
+
+source_file="res://assets/models/nature_kit/campfire_planks.obj"
+dest_files=["res://.godot/imported/campfire_planks.obj-c467f18dab0a31cec070c51444c4b8af.mesh", "res://.godot/imported/campfire_planks.obj-c467f18dab0a31cec070c51444c4b8af.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
