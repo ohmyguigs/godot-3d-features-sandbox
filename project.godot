@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="FeatureSandbox"
-run/main_scene="res://scenes/MenuPrincipal/menu_principal.tscn"
+run/main_scene="res://scenes/HUDS/MenuPrincipal/menu_principal.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -98,3 +98,7 @@ camera_down={
 "events": [Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":3,"axis_value":1.0,"script":null)
 ]
 }
+
+[physics]
+
+3d/physics_engine="JoltPhysics3D"
