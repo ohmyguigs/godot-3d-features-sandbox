@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://dpaxieur8k1mo"]
+[gd_scene load_steps=52 format=3 uid="uid://dpaxieur8k1mo"]
 
 [ext_resource type="Script" path="res://scenes/mundos/Mundo_1/world_1.gd" id="1_1yn6n"]
 [ext_resource type="PackedScene" uid="uid://c5ckxso6io5c" path="res://scenes/personagens/Player/Player.tscn" id="3_p4xve"]
@@ -11,14 +11,16 @@
 [ext_resource type="Texture2D" uid="uid://l1pfnlt3f1t" path="res://assets/models/map/kaypack_dungeon/wall_corner_scaffold_dungeon_texture.png" id="8_y5ud6"]
 [ext_resource type="Texture2D" uid="uid://ddxmvew1pvrvt" path="res://assets/models/map/kaypack_dungeon/wall_window_open_scaffold_dungeon_texture.png" id="9_on82w"]
 [ext_resource type="PackedScene" uid="uid://hrug4wy4csdb" path="res://scenes/personagens/npc/idle/npc_idle.tscn" id="11_ags0j"]
-[ext_resource type="ArrayMesh" uid="uid://d03o72so3t1dt" path="res://assets/models/nature_kit/rock_tallF.obj" id="12_umlla"]
-[ext_resource type="ArrayMesh" uid="uid://co5vtbkcinmqm" path="res://assets/models/nature_kit/tree_oak_dark.obj" id="13_63i2d"]
-[ext_resource type="ArrayMesh" uid="uid://dyhpcr48l2c6b" path="res://assets/models/nature_kit/rock_largeC.obj" id="13_v2wwh"]
-[ext_resource type="ArrayMesh" uid="uid://dufmdmwn71sg1" path="res://assets/models/nature_kit/rock_largeD.obj" id="14_0svfl"]
-[ext_resource type="ArrayMesh" uid="uid://bdi7lrssmt57v" path="res://assets/models/nature_kit/tree_fat_darkh.obj" id="16_lkmmi"]
-[ext_resource type="ArrayMesh" uid="uid://rqd3lgfmacga" path="res://assets/models/nature_kit/tree_pineDefaultA.obj" id="17_seyv1"]
-[ext_resource type="ArrayMesh" uid="uid://cqtoh1iogqldk" path="res://assets/models/nature_kit/tree_thin_dark.obj" id="18_07d5i"]
-[ext_resource type="ArrayMesh" uid="uid://bi8kul3jyfvgd" path="res://assets/models/nature_kit/tree_simple.obj" id="19_8k61h"]
+[ext_resource type="ArrayMesh" uid="uid://d03o72so3t1dt" path="res://assets/models/map/nature_kit/rock_tallF.obj" id="12_umlla"]
+[ext_resource type="ArrayMesh" uid="uid://co5vtbkcinmqm" path="res://assets/models/map/nature_kit/tree_oak_dark.obj" id="13_63i2d"]
+[ext_resource type="ArrayMesh" uid="uid://dyhpcr48l2c6b" path="res://assets/models/map/nature_kit/rock_largeC.obj" id="13_v2wwh"]
+[ext_resource type="ArrayMesh" uid="uid://dufmdmwn71sg1" path="res://assets/models/map/nature_kit/rock_largeD.obj" id="14_0svfl"]
+[ext_resource type="ArrayMesh" uid="uid://bdi7lrssmt57v" path="res://assets/models/map/nature_kit/tree_fat_darkh.obj" id="16_lkmmi"]
+[ext_resource type="ArrayMesh" uid="uid://rqd3lgfmacga" path="res://assets/models/map/nature_kit/tree_pineDefaultA.obj" id="17_seyv1"]
+[ext_resource type="ArrayMesh" uid="uid://cqtoh1iogqldk" path="res://assets/models/map/nature_kit/tree_thin_dark.obj" id="18_07d5i"]
+[ext_resource type="ArrayMesh" uid="uid://bi8kul3jyfvgd" path="res://assets/models/map/nature_kit/tree_simple.obj" id="19_8k61h"]
+[ext_resource type="ArrayMesh" uid="uid://kcypl552mbxn" path="res://assets/models/map/nature_kit/crops_cornStageD.obj" id="20_3n8vx"]
+[ext_resource type="PackedScene" uid="uid://bu78cp28fcx5l" path="res://assets/models/map/kaypack_dungeon/chest.glb" id="22_3d03a"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_h1kar"]
 sky_top_color = Color(0.0470588, 0.407843, 0.933333, 1)
@@ -818,7 +820,7 @@ mesh = SubResource("ArrayMesh_jdhpk")
 skeleton = NodePath("")
 
 [node name="wall_doorway_scaffold_door" type="MeshInstance3D" parent="ilhas/ilha_1/wall_doorway_scaffold/wall_doorway_scaffold"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.820099, 0, 0)
+transform = Transform3D(-0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, -0.820099, 0, 0)
 mesh = SubResource("ArrayMesh_r2pc7")
 skeleton = NodePath("")
 
@@ -833,8 +835,7 @@ shape = SubResource("ConvexPolygonShape3D_pd4mx")
 shape = SubResource("ConcavePolygonShape3D_u1oqv")
 
 [node name="ilha_1_portal" type="NavigationLink3D" parent="ilhas/ilha_1/wall_doorway_scaffold"]
-start_position = Vector3(111.545, 13.1498, -72.3744)
-end_position = Vector3(8.816, 8.003, -7.2)
+end_position = Vector3(-30.3755, -9.29724, 65.1931)
 
 [node name="foundations" type="Node3D" parent="ilhas/ilha_1"]
 
@@ -894,3 +895,41 @@ skeleton = NodePath("../../../..")
 transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 128.08, 13.1656, -80.3891)
 mesh = ExtResource("19_8k61h")
 skeleton = NodePath("../../../..")
+
+[node name="CropsCornStageD" type="MeshInstance3D" parent="ilhas/ilha_1/forest"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 121.328, 13.1656, -83.7358)
+mesh = ExtResource("20_3n8vx")
+skeleton = NodePath("../../../..")
+
+[node name="CropsCornStageD2" type="MeshInstance3D" parent="ilhas/ilha_1/forest"]
+transform = Transform3D(1.41421, 0, 1.41421, 0, 2, 0, -1.41421, 0, 1.41421, 122.328, 13.1656, -83.7358)
+mesh = ExtResource("20_3n8vx")
+skeleton = NodePath("../../../..")
+
+[node name="CropsCornStageD3" type="MeshInstance3D" parent="ilhas/ilha_1/forest"]
+transform = Transform3D(1.93185, 0, 0.517638, 0, 2, 0, -0.517638, 0, 1.93185, 123.328, 13.1656, -83.7358)
+mesh = ExtResource("20_3n8vx")
+skeleton = NodePath("../../../..")
+
+[node name="CropsCornStageD4" type="MeshInstance3D" parent="ilhas/ilha_1/forest"]
+transform = Transform3D(0.517638, 0, -1.93185, 0, 2, 0, 1.93185, 0, 0.517638, 124.328, 13.1656, -83.7358)
+mesh = ExtResource("20_3n8vx")
+skeleton = NodePath("../../../..")
+
+[node name="CropsCornStageD5" type="MeshInstance3D" parent="ilhas/ilha_1/forest"]
+transform = Transform3D(-1.73205, 0, -1, 0, 2, 0, 1, 0, -1.73205, 125.328, 13.1656, -83.7358)
+mesh = ExtResource("20_3n8vx")
+skeleton = NodePath("../../../..")
+
+[node name="CropsCornStageD6" type="MeshInstance3D" parent="ilhas/ilha_1/forest"]
+transform = Transform3D(-2.38419e-07, 0, 2, 0, 2, 0, -2, 0, -2.38419e-07, 126.328, 13.1656, -83.7358)
+mesh = ExtResource("20_3n8vx")
+skeleton = NodePath("../../../..")
+
+[node name="CropsCornStageD7" type="MeshInstance3D" parent="ilhas/ilha_1/forest"]
+transform = Transform3D(-2.38419e-07, 0, 2, 0, 2, 0, -2, 0, -2.38419e-07, 126.328, 13.1656, -84.7358)
+mesh = ExtResource("20_3n8vx")
+skeleton = NodePath("../../../..")
+
+[node name="chest2" parent="ilhas/ilha_1" instance=ExtResource("22_3d03a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 111.092, 13.1656, -85.0622)

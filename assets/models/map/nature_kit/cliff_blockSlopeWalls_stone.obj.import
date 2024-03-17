@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bxvjvym258pyu"
+path="res://.godot/imported/cliff_blockSlopeWalls_stone.obj-b7fe6dea4d2da6b82c7a3b80b7fe38c1.mesh"
+
+[deps]
+
+files=["res://.godot/imported/cliff_blockSlopeWalls_stone.obj-b7fe6dea4d2da6b82c7a3b80b7fe38c1.mesh"]
+
+source_file="res://assets/models/map/nature_kit/cliff_blockSlopeWalls_stone.obj"
+dest_files=["res://.godot/imported/cliff_blockSlopeWalls_stone.obj-b7fe6dea4d2da6b82c7a3b80b7fe38c1.mesh", "res://.godot/imported/cliff_blockSlopeWalls_stone.obj-b7fe6dea4d2da6b82c7a3b80b7fe38c1.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

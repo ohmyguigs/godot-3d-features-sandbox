@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ct0ypjtr0fex0"
+path="res://.godot/imported/mushroom_redTall.obj-4631b1153b9d16e08cff45953ef29217.mesh"
+
+[deps]
+
+files=["res://.godot/imported/mushroom_redTall.obj-4631b1153b9d16e08cff45953ef29217.mesh"]
+
+source_file="res://assets/models/map/nature_kit/mushroom_redTall.obj"
+dest_files=["res://.godot/imported/mushroom_redTall.obj-4631b1153b9d16e08cff45953ef29217.mesh", "res://.godot/imported/mushroom_redTall.obj-4631b1153b9d16e08cff45953ef29217.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cvhn62884eir3"
+path="res://.godot/imported/bridge_side_stone.obj-35281703de245c4b362335c578675cd8.mesh"
+
+[deps]
+
+files=["res://.godot/imported/bridge_side_stone.obj-35281703de245c4b362335c578675cd8.mesh"]
+
+source_file="res://assets/models/map/nature_kit/bridge_side_stone.obj"
+dest_files=["res://.godot/imported/bridge_side_stone.obj-35281703de245c4b362335c578675cd8.mesh", "res://.godot/imported/bridge_side_stone.obj-35281703de245c4b362335c578675cd8.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

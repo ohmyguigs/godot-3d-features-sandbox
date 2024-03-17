@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://brd2drcnyanjo"
+path="res://.godot/imported/tree_pineTallD_detailed.obj-5a51eab4c6229a5a263a278551f9181b.mesh"
+
+[deps]
+
+files=["res://.godot/imported/tree_pineTallD_detailed.obj-5a51eab4c6229a5a263a278551f9181b.mesh"]
+
+source_file="res://assets/models/map/nature_kit/tree_pineTallD_detailed.obj"
+dest_files=["res://.godot/imported/tree_pineTallD_detailed.obj-5a51eab4c6229a5a263a278551f9181b.mesh", "res://.godot/imported/tree_pineTallD_detailed.obj-5a51eab4c6229a5a263a278551f9181b.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

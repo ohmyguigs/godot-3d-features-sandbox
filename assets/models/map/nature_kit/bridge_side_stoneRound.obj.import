@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bfgv08mltftax"
+path="res://.godot/imported/bridge_side_stoneRound.obj-583ce7fa6fc24b5b0855c376d5e1e2ae.mesh"
+
+[deps]
+
+files=["res://.godot/imported/bridge_side_stoneRound.obj-583ce7fa6fc24b5b0855c376d5e1e2ae.mesh"]
+
+source_file="res://assets/models/map/nature_kit/bridge_side_stoneRound.obj"
+dest_files=["res://.godot/imported/bridge_side_stoneRound.obj-583ce7fa6fc24b5b0855c376d5e1e2ae.mesh", "res://.godot/imported/bridge_side_stoneRound.obj-583ce7fa6fc24b5b0855c376d5e1e2ae.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

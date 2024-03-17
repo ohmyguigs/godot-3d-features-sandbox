@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c7hw5gw388d3"
+path="res://.godot/imported/path_wood.obj-ea4bbf128e67b87d65803a657356d729.mesh"
+
+[deps]
+
+files=["res://.godot/imported/path_wood.obj-ea4bbf128e67b87d65803a657356d729.mesh"]
+
+source_file="res://assets/models/map/nature_kit/path_wood.obj"
+dest_files=["res://.godot/imported/path_wood.obj-ea4bbf128e67b87d65803a657356d729.mesh", "res://.godot/imported/path_wood.obj-ea4bbf128e67b87d65803a657356d729.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

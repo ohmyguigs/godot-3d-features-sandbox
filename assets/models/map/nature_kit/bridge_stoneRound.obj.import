@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cxnf6xw34idh4"
+path="res://.godot/imported/bridge_stoneRound.obj-858327112fb2599b6f6d1950f4e3cbc5.mesh"
+
+[deps]
+
+files=["res://.godot/imported/bridge_stoneRound.obj-858327112fb2599b6f6d1950f4e3cbc5.mesh"]
+
+source_file="res://assets/models/map/nature_kit/bridge_stoneRound.obj"
+dest_files=["res://.godot/imported/bridge_stoneRound.obj-858327112fb2599b6f6d1950f4e3cbc5.mesh", "res://.godot/imported/bridge_stoneRound.obj-858327112fb2599b6f6d1950f4e3cbc5.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

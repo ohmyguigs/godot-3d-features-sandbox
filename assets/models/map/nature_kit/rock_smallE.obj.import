@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://mf065u8hjda7"
+path="res://.godot/imported/rock_smallE.obj-59153fc9f06efe5a9a683e6a292f0e0f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/rock_smallE.obj-59153fc9f06efe5a9a683e6a292f0e0f.mesh"]
+
+source_file="res://assets/models/map/nature_kit/rock_smallE.obj"
+dest_files=["res://.godot/imported/rock_smallE.obj-59153fc9f06efe5a9a683e6a292f0e0f.mesh", "res://.godot/imported/rock_smallE.obj-59153fc9f06efe5a9a683e6a292f0e0f.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

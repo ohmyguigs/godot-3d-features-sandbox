@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dvymd3rynbctj"
+path="res://.godot/imported/cliff_cornerInner_rock.obj-edf5d34e102c48e8828f8b410a98a48e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/cliff_cornerInner_rock.obj-edf5d34e102c48e8828f8b410a98a48e.mesh"]
+
+source_file="res://assets/models/map/nature_kit/cliff_cornerInner_rock.obj"
+dest_files=["res://.godot/imported/cliff_cornerInner_rock.obj-edf5d34e102c48e8828f8b410a98a48e.mesh", "res://.godot/imported/cliff_cornerInner_rock.obj-edf5d34e102c48e8828f8b410a98a48e.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

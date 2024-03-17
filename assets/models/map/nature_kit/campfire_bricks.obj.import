@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b0jg33le1jejx"
+path="res://.godot/imported/campfire_bricks.obj-24a8dc947d11be686dbd8841392d85fc.mesh"
+
+[deps]
+
+files=["res://.godot/imported/campfire_bricks.obj-24a8dc947d11be686dbd8841392d85fc.mesh"]
+
+source_file="res://assets/models/map/nature_kit/campfire_bricks.obj"
+dest_files=["res://.godot/imported/campfire_bricks.obj-24a8dc947d11be686dbd8841392d85fc.mesh", "res://.godot/imported/campfire_bricks.obj-24a8dc947d11be686dbd8841392d85fc.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
