@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://c5ckxso6io5c"]
+[gd_scene load_steps=15 format=3 uid="uid://c5ckxso6io5c"]
 
 [ext_resource type="Script" path="res://scenes/personagens/Player/Player.gd" id="1_70dy5"]
 [ext_resource type="Texture2D" uid="uid://cjib5rb814xeq" path="res://assets/textures/characters/survivorFemaleA.png" id="2_fale8"]
@@ -1436,6 +1436,8 @@ _data = {
 "walk_slow": SubResource("Animation_4euol")
 }
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_g57s8"]
+
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_70dy5")
 
@@ -1874,5 +1876,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 [node name="xCameraGimbal" type="Node3D" parent="yCameraGimbal"]
 transform = Transform3D(1, 0, 0, 0, 0.996195, 0.0871557, 0, -0.0871557, 0.996195, 0, 0, 0)
 
-[node name="camera" type="Camera3D" parent="yCameraGimbal/xCameraGimbal"]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 6)
+[node name="SpringArm3D" type="SpringArm3D" parent="yCameraGimbal/xCameraGimbal"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
+shape = SubResource("SphereShape3D_g57s8")
+spring_length = 0.07
+
+[node name="camera" type="Camera3D" parent="yCameraGimbal/xCameraGimbal/SpringArm3D"]

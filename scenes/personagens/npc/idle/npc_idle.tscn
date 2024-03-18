@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://hrug4wy4csdb"]
+[gd_scene load_steps=16 format=3 uid="uid://hrug4wy4csdb"]
 
 [ext_resource type="Script" path="res://scenes/personagens/npc/idle/idle_npc.gd" id="1_w1uxc"]
 [ext_resource type="Texture2D" uid="uid://yorcqhmvxvm1" path="res://assets/textures/characters/skaterFemaleA.png" id="2_lvc6u"]
@@ -1720,6 +1720,9 @@ _data = {
 radius = 0.645978
 height = 4.00088
 
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ix0gk"]
+points = PackedVector3Array(-0.0289448, 3.85175, 0.5, -1.97012, 0.0885171, -0.5, -1.93931, 0.148251, 0.5, -1.97012, 3.91148, -0.5, 1.11022e-16, 0.0921374, -0.499038, -1.11022e-16, 3.90786, -0.499038, -0.0289448, 0.148251, 0.5, -1.93931, 3.85175, 0.5)
+
 [node name="npc" type="CharacterBody3D"]
 script = ExtResource("1_w1uxc")
 
@@ -2249,3 +2252,13 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 3, 
 
 [node name="Camera3D" type="Camera3D" parent="yCameraGimbal/xCameraGimbal"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.78977e-08, 0, -0.662273)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ix0gk")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="StaticBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ix0gk")

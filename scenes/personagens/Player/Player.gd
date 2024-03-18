@@ -13,7 +13,7 @@ class_name PlayerClass
 # Camera
 @onready var yGimbal:Node3D = $yCameraGimbal
 @onready var xGimbal:Node3D = $yCameraGimbal/xCameraGimbal
-@onready var camera:Camera3D = $yCameraGimbal/xCameraGimbal/camera
+@onready var camera:Camera3D = $yCameraGimbal/xCameraGimbal/SpringArm3D/camera
 
 # joystick properties
 @onready var jouystick_sensitivity:float = 0.03
@@ -49,14 +49,14 @@ func adjust_motion_direction_rotation_to_camera(direction):
 		return direction # do nothing if camera already aligned
 	return direction.rotated(Vector3.UP, yGimbal.rotation.y)
 	
-func rotate_camera_xgimbal_vertical(dir, str, sensitivity):
-	xGimbal.rotate_object_local(Vector3.RIGHT, dir * str * sensitivity)
+func rotate_camera_xgimbal_vertical(dir, strength, sensitivity):
+	xGimbal.rotate_object_local(Vector3.RIGHT, dir * strength * sensitivity)
 
-func rotate_camera_ygimbal_horizontal(dir, str, sensitivity):
-	yGimbal.rotate_object_local(Vector3.UP, dir * str * sensitivity)
+func rotate_camera_ygimbal_horizontal(dir, strength, sensitivity):
+	yGimbal.rotate_object_local(Vector3.UP, dir * strength * sensitivity)
 	
-func rotate_player_horizontal(dir, str, sensitivity):
-	self.rotate_object_local(Vector3.UP, dir * str * sensitivity)
+func rotate_player_horizontal(dir, strength, sensitivity):
+	self.rotate_object_local(Vector3.UP, dir * strength * sensitivity)
 	
 func handle_joystick_camera_control():
 	if Input.is_action_pressed("camera_up") || Input.is_action_just_pressed("camera_up"):
