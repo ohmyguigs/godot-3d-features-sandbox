@@ -210,7 +210,11 @@ bind/57/bone = -1
 bind/57/pose = Transform3D(-0.992808, 0.00958137, -0.119369, -0.119661, -0.0395747, 0.992027, 0.0047789, 0.999171, 0.040437, -0.34062, -0.341571, -0.0149847)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fmhb6"]
+diffuse_mode = 3
+specular_mode = 2
 albedo_texture = ExtResource("2_fale8")
+roughness = 0.0
+rim_enabled = true
 
 [sub_resource type="Animation" id="Animation_6ktsp"]
 resource_name = "idle"
