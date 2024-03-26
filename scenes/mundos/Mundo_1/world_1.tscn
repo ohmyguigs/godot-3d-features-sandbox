@@ -46,7 +46,17 @@ ambient_light_source = 3
 ambient_light_color = Color(0, 0.470588, 1, 1)
 tonemap_mode = 3
 ssr_enabled = true
+ssao_enabled = true
+ssil_enabled = true
+sdfgi_enabled = true
 glow_enabled = true
+glow_normalized = true
+fog_enabled = true
+fog_light_color = Color(0.317647, 0.576471, 0.780392, 1)
+fog_density = 0.001
+fog_sky_affect = 0.078
+volumetric_fog_density = 0.0276
+adjustment_enabled = true
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_f343k"]
 render_priority = 0
