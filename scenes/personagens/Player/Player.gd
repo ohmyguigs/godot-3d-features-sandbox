@@ -152,6 +152,7 @@ func _physics_process(delta):
 		if is_rolling:
 			velocity.x = roll_direction_cache.x * speed
 			velocity.z = roll_direction_cache.z * speed
+			visuals.look_at(roll_direction_cache + self.position)
 		else:
 			var rotatedDirection = adjust_motion_direction_rotation_to_camera(direction)
 			direction = rotatedDirection

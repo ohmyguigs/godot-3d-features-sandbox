@@ -18,6 +18,8 @@ const _RESIZE_THROTTLE_SECONDS:float = 0.1
 ## The minimum camera near clipping distance.
 const _EXIT_CAMERA_NEAR_MIN:float = 0.01
 
+@onready var player:PlayerClass = GameManager.player1
+
 ## The portal mesh's local bounding box.
 @onready var _mesh_aabb:AABB = mesh.get_aabb()
 
@@ -49,6 +51,10 @@ const _EXIT_CAMERA_NEAR_MIN:float = 0.01
 
 ## The exit portal. Leave unset to use this portal as an exit only.
 @export var exit_portal:Portal
+
+## tweak exit position
+@export var y_exit_position_tweak:float = -1.4
+@export var z_exit_position_tweak:float = -0.5
 
 # The viewport rendering the portal surface
 var _viewport:SubViewport
@@ -295,3 +301,8 @@ static func raycast(tree:SceneTree, from:Vector3, dir:Vector3, handle_raycast:Ca
 		from = closest_portal.real_to_exit_position(closest_hit)
 		dir = closest_portal.real_to_exit_direction(closest_dir)
 		ignore_portal = closest_portal.exit_portal
+
+func _on_area_3d_body_entered(body):
+	if body:
+		var positionTweak = Vector3(0,y_exit_position_tweak,z_exit_position_tweak)
+		body.global_position = exit_portal.global_position + positionTweak

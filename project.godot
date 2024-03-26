@@ -26,6 +26,10 @@ window/size/viewport_height=1080
 window/stretch/mode="canvas_items"
 window/fbx/enabled=true
 
+[filesystem]
+
+import/fbx/enabled=false
+
 [input]
 
 ui_accept={

@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=3 uid="uid://dpaxieur8k1mo"]
+[gd_scene load_steps=66 format=3 uid="uid://dpaxieur8k1mo"]
 
 [ext_resource type="Script" path="res://scenes/mundos/Mundo_1/world_1.gd" id="1_1yn6n"]
 [ext_resource type="PackedScene" uid="uid://c5ckxso6io5c" path="res://scenes/personagens/Player/Player.tscn" id="3_p4xve"]
@@ -44,7 +44,8 @@ sky = SubResource("Sky_85xy5")
 sky_custom_fov = 90.0
 ambient_light_source = 3
 ambient_light_color = Color(0, 0.470588, 1, 1)
-tonemap_mode = 2
+tonemap_mode = 3
+ssr_enabled = true
 glow_enabled = true
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_f343k"]
@@ -267,6 +268,9 @@ data = PackedVector3Array(-1.0894, 2.1643, 0.25, -1.0898, 0.5, 0.25, -2, 0.5, 0.
 [sub_resource type="PlaneMesh" id="PlaneMesh_agy15"]
 size = Vector2(3, 3)
 orientation = 2
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_djhn0"]
+size = Vector3(2.05005, 2.61682, 0.410072)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7jtw3"]
 resource_name = "texture"
@@ -622,8 +626,7 @@ mesh = SubResource("ArrayMesh_jdhpk")
 skeleton = NodePath("")
 
 [node name="portal_1_cover_door" type="MeshInstance3D" parent="firelink_shrine/walls_-z/wall_doorway_scaffold2/wall_doorway_scaffold2"]
-transform = Transform3D(1, 0, 5.96046e-08, 0, 1, 0, -5.96046e-08, 0, 1, -0.844028, 0, 0.00338602)
-visible = false
+transform = Transform3D(-0.774194, 0, -0.632949, 0, 1, 0, 0.632949, 0, -0.774194, -0.844028, 0, 0.00338602)
 mesh = SubResource("ArrayMesh_r2pc7")
 skeleton = NodePath("")
 
@@ -648,6 +651,13 @@ fade_out_distance_max = 27.0
 fade_out_distance_min = 21.0
 fade_out_color = Color(1, 1, 1, 0)
 exit_portal = NodePath("../../../../../ilhas/ilha_1/portal_structure/wall_doorway_scaffold/portal_2/portal_2_plane")
+z_exit_position_tweak = -0.7
+
+[node name="Area3D" type="Area3D" parent="firelink_shrine/walls_-z/wall_doorway_scaffold2/portal_1/portal_1_plane"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="firelink_shrine/walls_-z/wall_doorway_scaffold2/portal_1/portal_1_plane/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.157)
+shape = SubResource("BoxShape3D_djhn0")
 
 [node name="wall_doorway_scaffold3" type="Node3D" parent="firelink_shrine/walls_-z"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.816, 8.003, -7.2)
@@ -1005,8 +1015,7 @@ mesh = SubResource("ArrayMesh_jdhpk")
 skeleton = NodePath("")
 
 [node name="wall_doorway_scaffold_door" type="MeshInstance3D" parent="ilhas/ilha_1/portal_structure/wall_doorway_scaffold/wall_doorway_scaffold"]
-transform = Transform3D(1, 0, -1.49012e-07, 0, 1, 0, 1.49012e-07, 0, 1, -0.851196, 0, 0)
-visible = false
+transform = Transform3D(-0.77384, 0, -0.633381, 0, 1, 0, 0.633381, 0, -0.77384, -0.851196, 0, 0)
 mesh = SubResource("ArrayMesh_r2pc7")
 skeleton = NodePath("")
 
@@ -1031,6 +1040,13 @@ disable_viewport_distance = 27.0
 fade_out_distance_max = 27.0
 fade_out_distance_min = 21.0
 exit_portal = NodePath("../../../../../../firelink_shrine/walls_-z/wall_doorway_scaffold2/portal_1/portal_1_plane")
+z_exit_position_tweak = 0.7
+
+[node name="Area3D" type="Area3D" parent="ilhas/ilha_1/portal_structure/wall_doorway_scaffold/portal_2/portal_2_plane"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ilhas/ilha_1/portal_structure/wall_doorway_scaffold/portal_2/portal_2_plane/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.203812)
+shape = SubResource("BoxShape3D_djhn0")
 
 [node name="wall_half_gltf" parent="ilhas/ilha_1/portal_structure" instance=ExtResource("19_vqj13")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 109.292, 13.1656, -72.6434)
@@ -1098,31 +1114,6 @@ skeleton = NodePath("../../../..")
 [node name="TreeSimple" type="MeshInstance3D" parent="ilhas/ilha_1/forest"]
 transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 128.08, 13.1656, -80.3891)
 mesh = ExtResource("19_8k61h")
-skeleton = NodePath("../../../..")
-
-[node name="CropsCornStageD" type="MeshInstance3D" parent="ilhas/ilha_1/forest"]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 121.328, 13.1656, -83.7358)
-mesh = ExtResource("20_3n8vx")
-skeleton = NodePath("../../../..")
-
-[node name="CropsCornStageD2" type="MeshInstance3D" parent="ilhas/ilha_1/forest"]
-transform = Transform3D(1.41421, 0, 1.41421, 0, 2, 0, -1.41421, 0, 1.41421, 122.328, 13.1656, -83.7358)
-mesh = ExtResource("20_3n8vx")
-skeleton = NodePath("../../../..")
-
-[node name="CropsCornStageD3" type="MeshInstance3D" parent="ilhas/ilha_1/forest"]
-transform = Transform3D(1.93185, 0, 0.517638, 0, 2, 0, -0.517638, 0, 1.93185, 123.328, 13.1656, -83.7358)
-mesh = ExtResource("20_3n8vx")
-skeleton = NodePath("../../../..")
-
-[node name="CropsCornStageD4" type="MeshInstance3D" parent="ilhas/ilha_1/forest"]
-transform = Transform3D(0.517638, 0, -1.93185, 0, 2, 0, 1.93185, 0, 0.517638, 124.328, 13.1656, -83.7358)
-mesh = ExtResource("20_3n8vx")
-skeleton = NodePath("../../../..")
-
-[node name="CropsCornStageD5" type="MeshInstance3D" parent="ilhas/ilha_1/forest"]
-transform = Transform3D(-1.73205, 0, -1, 0, 2, 0, 1, 0, -1.73205, 125.328, 13.1656, -83.7358)
-mesh = ExtResource("20_3n8vx")
 skeleton = NodePath("../../../..")
 
 [node name="CropsCornStageD6" type="MeshInstance3D" parent="ilhas/ilha_1/forest"]
@@ -1357,3 +1348,6 @@ transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, -3.91399, 
 [node name="xSun" type="Node3D" parent="ySun"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="ySun/xSun"]
+
+[connection signal="body_entered" from="firelink_shrine/walls_-z/wall_doorway_scaffold2/portal_1/portal_1_plane/Area3D" to="firelink_shrine/walls_-z/wall_doorway_scaffold2/portal_1/portal_1_plane" method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="ilhas/ilha_1/portal_structure/wall_doorway_scaffold/portal_2/portal_2_plane/Area3D" to="ilhas/ilha_1/portal_structure/wall_doorway_scaffold/portal_2/portal_2_plane" method="_on_area_3d_body_entered"]
